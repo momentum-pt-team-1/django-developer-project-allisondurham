@@ -1,0 +1,49 @@
+
+
+
+Issues:
+
+5. Add a form to mark a TODO as done
+    "As a user, I want to mark a TODO as done on my TODOS list page so that i can track my progress."
+        [ ]  In forms.py, create form for marking a TODO as done.
+        [ ]  Render the form on its own template at its own URL
+                ***  Reference : Working with Forms Mozilla  ***
+                    "Django Tutorial Part 9: Working with forms"
+
+
+4. Add a form to add a TODO
+    "As a user, from my list of TODOS, I want to be able to use a form to add a new TODO, so that I can keep up with my responsibilities."
+        [ ]  Add forms.py and form for adding a TODO
+        [ ]  Display the form on the individual list page (if built, if not buid a new page for the form)
+                ***  Reference : Django Docs Creating Forms from Models ***
+                    "Creating forms from models"
+
+
+3. Show TODOs by owner on homepage
+    "As a user, I'd like to see all TODOS organized by their owner on the homepage, so that i can see what my family/team/organization is up to"
+        [ ]  Separate TODOS by user
+        [ ]  Render the separated TODOS in an appealing way
+                ***  Reference: null  ***
+    
+
+2. Make site look better
+    "As a user, I want to see an appealing interface, so that i enjoy using the app"
+        [ ]  Better use of whitespace
+        [ ]  Consistent fonts
+        [ ]  Color scheme with good contrast
+        [ ]  Use flexbox and a library like Picnic, Tachyons, or Semantic to allign items in a more organized and interesting fashion. 
+        [ ]  Make use of extending the base.html template to make your style consistent
+                ***  References : Design for Non-Designers by Tracy Osborn pt. 1
+                                  Design for Non-Designers by Tracy Osborn pt. 2
+                                  Extending Templates Mozilla  ***
+
+
+1. Need page with TODOs owned by the logged in user
+    "As a user, I want to be able to visit a page to see the TODOS I own, so that I can track my progress. 
+        [ ] url for this new page
+        [ ] view for this new page
+        [ ] require that a user be logged in to see this page
+                ***  References : Database Design
+                                  Django DB Queries  ***
+
+
