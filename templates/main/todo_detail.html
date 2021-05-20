@@ -16,7 +16,9 @@
                 {{ todo.due_date }}
             </time>
         {% endif %}
-        <h1>{{ todo.text }}</h1>
-        <p>{{ todo.user|linebreaksbr }}</p>
+        <h1>{{ todo.task }}</h1>
+        <p>Description: {{ todo.details }}</p>
+        <p>Tasker: {{ todo.user|linebreaksbr }}</p>
+        <p>Done: {{ todo.done|linebreaksbr }}</p>
     </article>
 {% endblock %}

@@ -4,12 +4,15 @@
 {% block content %}
 
     {% for todo in todos.all %}
-        <article class="todo">
+        <article class="post">
             <time class="date">
                 {{ todo.due_date }}
             </time>
-            <h1><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.text }}</a></h1>
-            <p>{{ todo.user|linebreaksbr }}</p>
+            <h1><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.task }}</a></h1>
+            <p>Tasker: {{ todo.user|linebreaksbr }}</p>
+            <div>
+                <input type = "checkbox"  class = "largerCheckbox" name = "done">
+            </div>
         </article>
     {% endfor %}
 {% endblock %}

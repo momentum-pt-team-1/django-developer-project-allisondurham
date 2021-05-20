@@ -131,3 +131,5 @@ ACCOUNT_ACTIVATION_DAYS = 7 # One-week activation window; you may, of course, us
 REGISTRATION_AUTO_LOGIN = True # Automatically log the user in.
 
 INTERNAL_IPS = ['127.0.0.1']
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
