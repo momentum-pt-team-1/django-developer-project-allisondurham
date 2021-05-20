@@ -21,7 +21,8 @@ from main import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.homepage, name="home"),
+    # path('', views.homepage, name="home"),
     path('accounts/', include('registration.backends.simple.urls')),
     path('__debug__', include(debug_toolbar.urls)),
+    path('', include('main.urls')),
 ]
