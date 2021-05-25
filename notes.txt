@@ -5,8 +5,8 @@ Issues:
 
 5. Add a form to mark a TODO as done
     "As a user, I want to mark a TODO as done on my TODOS list page so that i can track my progress."
-        [ ]  In forms.py, create form for marking a TODO as done.
-        [ ]  Render the form on its own template at its own URL
+        [@]  In forms.py, create form for marking a TODO as done.
+        [@]  Render the form on its own template at its own URL
                 ***  Reference : Working with Forms Mozilla  ***
                     "Django Tutorial Part 9: Working with forms"
 
@@ -21,7 +21,7 @@ Issues:
 
 3. Show TODOs by owner on homepage
     "As a user, I'd like to see all TODOS organized by their owner on the homepage, so that i can see what my family/team/organization is up to"
-        [ ]  Separate TODOS by user
+        [@]  Separate TODOS by user
         [ ]  Render the separated TODOS in an appealing way
                 ***  Reference: null  ***
     
@@ -49,7 +49,7 @@ Issues:
 
 
 
-#stole from home.html?  shit. 
+# from home.html?  shit. 
 
 {% for todo in todos.all %}
 {{todo}}
@@ -62,7 +62,7 @@ Issues:
 
 
 
-#stole from base.html
+#  from base.html
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -81,7 +81,7 @@ Issues:
 
 
 
-#stolen from base.html
+# from base.html
 
 <!-- <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +108,7 @@ Issues:
 
 
 
-#stolen from home.html
+# from home.html
 
 {% extends 'base.html' %}
 {% load static %}
@@ -149,7 +149,7 @@ Issues:
 
 
 
-#stolen from base.html line 17
+# from base.html line 17
 
             {% if user.is_authenticated %}
                     <a href="{% url 'todo_new' %}" class="top-menu">

@@ -18,7 +18,7 @@ from django.shortcuts import redirect
 #     return render(request, 'base.html', {'todos': todos})
 
 def todo_list(request):
-    todos = Todo.objects.all().order_by('due_date')
+    todos = Todo.objects.all().order_by('user')
     return render(request, 'main/todo_list.html', {'todos': todos})
 
 def todo_detail(request, pk):
@@ -61,4 +61,3 @@ def check_box(request):
     context = {}
     context['form'] = Done()
     return render( request, "todo_detail.html", context)
-    
