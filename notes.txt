@@ -14,7 +14,7 @@ Issues:
 4. Add a form to add a TODO
     "As a user, from my list of TODOS, I want to be able to use a form to add a new TODO, so that I can keep up with my responsibilities."
         [@]  Add forms.py and form for adding a TODO
-        [ ]  Display the form on the individual list page (if built, if not buid a new page for the form)
+        [@]  Display the form on the individual list page (if built, if not buid a new page for the form)
                 ***  Reference : Django Docs Creating Forms from Models ***
                     "Creating forms from models"
 
@@ -31,7 +31,7 @@ Issues:
         [@]  Better use of whitespace
         [@]  Consistent fonts
         [@]  Color scheme with good contrast
-        [ ]  Use flexbox and a library like Picnic, Tachyons, or Semantic to allign items in a more organized and interesting fashion. 
+        [@]  Use flexbox and a library like Picnic, Tachyons, or Semantic to allign items in a more organized and interesting fashion. 
         [@]  Make use of extending the base.html template to make your style consistent
                 ***  References : Design for Non-Designers by Tracy Osborn pt. 1
                                   Design for Non-Designers by Tracy Osborn pt. 2

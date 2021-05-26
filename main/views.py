@@ -32,7 +32,7 @@ def todo_new(request):
         form = TodoForm(request.POST)
         if form.is_valid():
             todo = form.save(commit=False)
-            todo.user = request.user
+            # todo.user = request.user
             todo.due_date = timezone.now()
             todo.save()
             return redirect('todo_detail', pk=todo.pk)
@@ -46,7 +46,7 @@ def todo_edit(request, pk):
         form = TodoForm(request.POST, instance=todo)
         if form.is_valid():
             todo = form.save(commit=False)
-            todo.user = request.user
+            # todo.user = request.user
             todo.due_date = timezone.now()
             todo.save()
             return redirect('todo_detail', pk=todo.pk)
@@ -61,3 +61,13 @@ def check_box(request):
     context = {}
     context['form'] = Done()
     return render( request, "todo_detail.html", context)
+
+def todo_done(request):
+    todos = Todo.objects.all().order_by('done')
+    return render(request, 'main/todo_list.html', {'todos': todos})
+
+# def todo_done():
+#     pass
+def todo_user(request):
+    todos = Todo.objects.filter(user__id=request.user.id).order_by('done')
+    return render(request, 'main/todo_user.html', {'todos': todos})

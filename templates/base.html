@@ -14,13 +14,56 @@
     <body>
         <header class="page-header">
             <div class="container">
-                {% if user.is_authenticated %}
-                <a href="{% url 'todo_new' %}" class="top-menu">
-                    {% include './main/icons/file-earmark-plus.svg' %}
-                </a>
-                {% endif %}
                 <h1><a href="/">From ToDo to ToDone!</a></h1>
+                
+                <div class="d-flex flex-column bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'todo_user' %}">
+                            {{ request.user }}'s tasks</a>
+                        {% endif %}
+                        {% if not user.is_authenticated %}
+                        <a href='/accounts/login'>login{% include './main/icons/arrow-right.svg' %}</a>
+                     {% endif %}
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        {% if user.is_authenticated %}
+                        <a href='/accounts/logout'>logout
+                        {% include './main/icons/arrow-left.svg' %}
+                    </a>
+                        {% endif %}
+                        </div>
+
+                    <div class="p-2 bd-highlight">
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'todo_new' %}">new task
+                            {% include './main/icons/file-earmark-plus.svg' %}</a>
+                        {% endif %}
+
+                    </div>
+                    <div class="p-2 bd-highlight">
+                        
+                        <a href="{% url 'todo_user' %}">view 1: logged in user</a>
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        view 2: todos by date
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        view 3: todos by user
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        view 4: todos by done
+                    </div>
+
+                    <div class="p-2 bd-highlight">
+                        need to make urls, views, and templates for these
+                    </div>
             </div>
+        </div>
         </header>
         <main class="container">
             <div class="row">

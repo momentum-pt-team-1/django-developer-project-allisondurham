@@ -7,7 +7,7 @@ class TodoForm(forms.ModelForm):
 
     class Meta:
         model = Todo
-        fields = ('task', 'due_date', 'user', 'details')
+        fields = ('task', 'due_date', 'user', 'done', 'details')
 
     class Done:
         done = forms.BooleanField()
