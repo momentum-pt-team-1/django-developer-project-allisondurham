@@ -58,66 +58,64 @@ li a:hover {
 <div class="big_box">
 
     <nav class="sticky">
-        <ul class="list-inline">
-            <li>{% if user.is_authenticated %}
-                <h2><a href="/">From ToDo to ToDone!</a></h2>
+        <div class="list-inline">
+            <div class="sticky1">{% if user.is_authenticated %}
+                <h1><a class="logo" href="/">From ToDo to ToDone!</a></h1>
                 {% endif %}
                 {% if not user.is_authenticated %}
-                <h2><a href="/home">From ToDo to ToDone!</a></h2>
-                {% endif %}</li>
+                <h1><a class="logo" href="/home">From ToDo to ToDone!</a></h1>
+                {% endif %}</div>
 
-            <li>{% if user.is_authenticated %}
+            <div class="sticky2">{% if user.is_authenticated %}
                 <a href="{% url 'todo_new' %}">new task
                 {% include './main/icons/plus.svg' %}</a>
-                {% endif %}</li>
+                {% endif %}</div>
 
-            <li>{% if user.is_authenticated %}
+            <div class="sticky3">{% if user.is_authenticated %}
                 <a href='/accounts/logout'>logout
                 {% include './main/icons/arrow-left.svg' %}</a>
                 {% endif %}
                 {% if not user.is_authenticated %}
                 <a href='/accounts/login'>login{% include './main/icons/arrow-right.svg' %}</a>
-                {% endif %}</li>
-        </ul>
+                {% endif %}</div>
+        </div>
     </nav>
 
 
 <div class="big_middle_box">
-    <div class="column">
+    <div class="column1">
     <div class="left_sidebar"> 
-                <ul class="container"></ul>
-
                 
                 
-                    <li class="pic"><img src="{% static 'images/taskimage.jpeg' %}" alt="image"></li>
+                    <div class="pic"><img src="{% static 'images/taskimage.jpeg' %}" alt="image"></div>
                 
                 
-                    <li class="item">{% if user.is_authenticated %}
+                    <div class="link">{% if user.is_authenticated %}
                         <a href="{% url 'todo_user' %}">
                         {{ request.user }}'s tasks</a>
                         {% endif %}
                         {% if not user.is_authenticated %}
                         <a href='/accounts/login'>login{% include './main/icons/arrow-right.svg' %}</a>
-                        {% endif %}</li>
+                        {% endif %}</div>
                 
                 
-                    <li class="item">{% if user.is_authenticated %}
+                    <div class="link">{% if user.is_authenticated %}
                         <a href="{% url 'todo_date' %}">tasks by date</a>
-                        {% endif %}</li>
+                        {% endif %}</div>
                 
                 
-                    <li class="item">{% if user.is_authenticated %}
+                    <div class="link">{% if user.is_authenticated %}
                         <a href="{% url 'todo_users' %}">tasks by user</a>
-                        {% endif %}</li>
+                        {% endif %}</div>
                 
                 
-                    <li class="item">{% if user.is_authenticated %}
+                    <div class="link">{% if user.is_authenticated %}
                         <a href="{% url 'todo_done' %}">tasks by done</a>
-                        {% endif %}</li>
-                </ul>
+                        {% endif %}</div>
+                
                 </div>
                 </div>
-    <div class="column">      
+    <div class="column2">      
     <div class="right_body">
         <main>
         {% block content %}

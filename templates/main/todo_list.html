@@ -14,7 +14,7 @@
             </aside>
             
             <time class="date">{{ todo.due_date }}</time>
-            <h1><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.task }}</a></h1>
+            <h2><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.task }}</a></h2>
             <p>Tasker: {{ todo.user|linebreaksbr }}</p>
              
             <div>
