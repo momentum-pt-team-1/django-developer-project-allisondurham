@@ -5,8 +5,8 @@ Issues:
 
 5. Add a form to mark a TODO as done
     "As a user, I want to mark a TODO as done on my TODOS list page so that i can track my progress."
-        [@]  In forms.py, create form for marking a TODO as done.
-        [@]  Render the form on its own template at its own URL
+        []  In forms.py, create form for marking a TODO as done.
+        []  Render the form on its own template at its own URL
                 ***  Reference : Working with Forms Mozilla  ***
                     "Django Tutorial Part 9: Working with forms"
 
@@ -40,9 +40,9 @@ Issues:
 
 1. Need page with TODOs owned by the logged in user
     "As a user, I want to be able to visit a page to see the TODOS I own, so that I can track my progress. 
-        [ ] url for this new page
-        [ ] view for this new page
-        [ ] require that a user be logged in to see this page
+        [@] url for this new page
+        [@] view for this new page
+        [@] require that a user be logged in to see this page
                 ***  References : Database Design
                                   Django DB Queries  ***
 
@@ -156,3 +156,60 @@ Issues:
                         {% include './icons/file-earmark-plus.svg' %}
                     </a>
             {% endif %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+<head>
+    <style>
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #db973f;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20pt
+}
+li a.active {
+  background-color: #0e4631;
+  color: white;
+}
+/* Change the link color on hover */
+li a:hover {
+  background-color: #0e4631;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<ul>
+    <li></li>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
