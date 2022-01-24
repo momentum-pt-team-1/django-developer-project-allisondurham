@@ -1,0 +1,30 @@
+
+
+{% extends 'base.html' %}
+{% block content %}
+
+    {% for todo in todos.all %}
+        <article class="post">
+            <aside class="actions">
+                {% if user.is_authenticated %}
+                    <a class="pencil" class='ptn btn-default' href="{% url 'todo_edit' pk=todo.pk %}">
+                        {% include './icons/pencil-fill.svg' %}
+                    </a>
+                {% endif %}
+            </aside>
+            
+            <time class="date">{{ todo.due_date }}</time>
+            <h2><a href="{% url 'todo_detail' pk=todo.pk %}">{{ todo.task }}</a></h2>
+            <p>Tasker: {{ todo.user|linebreaksbr }}</p>
+             
+            <div>
+                {% if todo.done %}
+                <input type = "checkbox"  class = "largerCheckbox" name = "done" checked>
+                {% endif %}
+                {% if not todo.done %}
+                <input type = "checkbox"  class = "largerCheckbox" name = "done">
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+    {% endblock %}

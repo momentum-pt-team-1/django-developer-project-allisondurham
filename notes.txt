@@ -1,0 +1,215 @@
+
+
+
+Issues:
+
+5. Add a form to mark a TODO as done
+    "As a user, I want to mark a TODO as done on my TODOS list page so that i can track my progress."
+        []  In forms.py, create form for marking a TODO as done.
+        []  Render the form on its own template at its own URL
+                ***  Reference : Working with Forms Mozilla  ***
+                    "Django Tutorial Part 9: Working with forms"
+
+
+4. Add a form to add a TODO
+    "As a user, from my list of TODOS, I want to be able to use a form to add a new TODO, so that I can keep up with my responsibilities."
+        [@]  Add forms.py and form for adding a TODO
+        [@]  Display the form on the individual list page (if built, if not buid a new page for the form)
+                ***  Reference : Django Docs Creating Forms from Models ***
+                    "Creating forms from models"
+
+
+3. Show TODOs by owner on homepage
+    "As a user, I'd like to see all TODOS organized by their owner on the homepage, so that i can see what my family/team/organization is up to"
+        [@]  Separate TODOS by user
+        [ ]  Render the separated TODOS in an appealing way
+                ***  Reference: null  ***
+    
+
+2. Make site look better
+    "As a user, I want to see an appealing interface, so that i enjoy using the app"
+        [@]  Better use of whitespace
+        [@]  Consistent fonts
+        [@]  Color scheme with good contrast
+        [@]  Use flexbox and a library like Picnic, Tachyons, or Semantic to allign items in a more organized and interesting fashion. 
+        [@]  Make use of extending the base.html template to make your style consistent
+                ***  References : Design for Non-Designers by Tracy Osborn pt. 1
+                                  Design for Non-Designers by Tracy Osborn pt. 2
+                                  Extending Templates Mozilla  ***
+
+
+1. Need page with TODOs owned by the logged in user
+    "As a user, I want to be able to visit a page to see the TODOS I own, so that I can track my progress. 
+        [@] url for this new page
+        [@] view for this new page
+        [@] require that a user be logged in to see this page
+                ***  References : Database Design
+                                  Django DB Queries  ***
+
+
+
+
+# from home.html?  shit. 
+
+{% for todo in todos.all %}
+{{todo}}
+{% endfor %}
+
+
+{% endblock %}
+
+
+
+
+
+#  from base.html
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block meta %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
+    {% block title %}<title>TODOS</title>{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html> -->
+
+
+
+# from base.html
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block meta %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% endblock %}
+    {% block title %}<title>TODOS</title>{% endblock %}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+# from home.html
+
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block title %}
+        <title>THIS IS THE HOMEPAGE!!!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        {% endblock %}
+    </head>
+    <body>
+        <header class="page-header">
+            <div class="container">
+            {% if user.is_authenticated %}
+                    <a href="{% url 'todo_new' %}" class="top-menu">
+                        {% include './icons/file-earmark-plus.svg' %}
+                    </a>
+            {% endif %}
+                <h1><a href="/">From ToDo to ToDone!</a></h1>
+            </div>
+        </header>
+        <main class="container">
+            <div class="row">
+                <div class="col">
+                {% block content %}
+                {% endblock %}
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
+
+
+
+
+
+# from base.html line 17
+
+            {% if user.is_authenticated %}
+                    <a href="{% url 'todo_new' %}" class="top-menu">
+                        {% include './icons/file-earmark-plus.svg' %}
+                    </a>
+            {% endif %}
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <title> </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+<head>
+    <style>
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 25%;
+  background-color: #db973f;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20pt
+}
+li a.active {
+  background-color: #0e4631;
+  color: white;
+}
+/* Change the link color on hover */
+li a:hover {
+  background-color: #0e4631;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+
+<ul>
+    <li></li>
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+</body>
+</html>
